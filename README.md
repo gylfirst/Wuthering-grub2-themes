@@ -5,9 +5,9 @@
 Usage:  `sudo ./install.sh [OPTIONS...]`
 
 ```
-  -t, --theme     Background theme variant(s) [changli|jinxi|jiyan|yinlin|anke|weilinai|kakaluo|jianxin] (default is changli)
+  -t, --theme     Background theme variant(s) [changli|jinxi|jiyan|yinlin|anke|weilinai|kakaluo|jianxin|pirate] (default is changli)
   -s, --screen    Screen display variant(s)   [1080p|2k|4k] (default is 1080p)
-  -r, --remove    Remove/Uninstall theme      [changli|jinxi|jiyan|yinlin|anke|weilinai|kakaluo|jianxin] (must add theme name option, default is changli)
+  -r, --remove    Remove/Uninstall theme      [changli|jinxi|jiyan|yinlin|anke|weilinai|kakaluo|jianxin|pirate] (must add theme name option, default is changli)
   -b, --boot      install theme into '/boot/grub' or '/boot/grub2'
   -h, --help      Show this help
 ```
@@ -62,6 +62,12 @@ sudo ./install.sh -r -t yinlin
 
 ## Preview:
 ![preview](preview.jpg?raw=true)
+
+## My custom pirate theme:
+
+![pirate preview](preview_pirate.jpg?raw=true)
+
+The `logo.png.back` and `theme-2k.txt.back` are the original logo and parameters for the themes. I replaced them in order to create my custom one.
 
 ## Documents
 

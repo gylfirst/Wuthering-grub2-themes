@@ -13,7 +13,7 @@ GRUB_DIR="/usr/share/grub/themes"
 REO_DIR="$(cd $(dirname $0) && pwd)"
 
 SCREEN_VARIANTS=('1080p' '2k' '4k')
-THEME_VARIANTS=('changli' 'jinxi' 'jiyan' 'yinlin' 'anke' 'weilinai' 'kakaluo' 'jianxin')
+THEME_VARIANTS=('changli' 'jinxi' 'jiyan' 'yinlin' 'anke' 'weilinai' 'kakaluo' 'jianxin' 'pirate')
 
 screens=()
 themes=()
@@ -65,9 +65,9 @@ cat << EOF
 Usage: $0 [OPTION]...
 
 OPTIONS:
-  -t, --theme     Background theme variant(s) [changli|jinxi|jiyan|yinlin|anke|weilinai|kakaluo|jianxin] (default is changli)
+  -t, --theme     Background theme variant(s) [changli|jinxi|jiyan|yinlin|anke|weilinai|kakaluo|jianxin|pirate] (default is changli)
   -s, --screen    Screen display variant(s)   [1080p|2k|4k] (default is 1080p)
-  -r, --remove    Remove/Uninstall theme      [changli|jinxi|jiyan|yinlin|anke|weilinai|kakaluo|jianxin] (must add theme name option, default is changli)
+  -r, --remove    Remove/Uninstall theme      [changli|jinxi|jiyan|yinlin|anke|weilinai|kakaluo|jianxin|pirate] (must add theme name option, default is changli)
   -b, --boot      Install theme into '/boot/grub' or '/boot/grub2'
   -h, --help      Show this help
 
@@ -258,7 +258,8 @@ run_dialog() {
       5 "Anke Theme" off \
       6 "Weilinai Theme" off  \
       7 "Kakaluo Theme" off  \
-      8 "Jianxin Theme" off --output-fd 1 )
+      8 "Jianxin Theme" off \
+      9 "Pirate Theme" off --output-fd 1 )
       case "$tui" in
         1) theme="changli"    ;;
         2) theme="jinxi"      ;;
@@ -268,6 +269,7 @@ run_dialog() {
         6) theme="weilinai"   ;;
         7) theme="kakaluo"    ;;
         8) theme="jianxin"    ;;
+        9) theme="pirate"     ;;
         *) operation_canceled ;;
      esac
 
@@ -494,6 +496,10 @@ while [[ $# -gt 0 ]]; do
             themes+=("${THEME_VARIANTS[7]}")
             shift
             ;;
+          pirate)
+            themes+=("${THEME_VARIANTS[8]}")
+            shift
+            ;;
           -*)
             break
             ;;
@@ -548,6 +554,10 @@ while [[ $# -gt 0 ]]; do
             ;;
           jianxin)
             themes+=("${THEME_VARIANTS[7]}")
+            shift
+            ;;
+          pirate)
+            themes+=("${THEME_VARIANTS[8]}")
             shift
             ;;
           -*)
